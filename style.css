@@ -249,6 +249,17 @@ header {
   overflow: hidden;
 }
 .hero-visual-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+video.hero-visual-bg { object-fit: cover; }
+.trainer-frame {
+  position: absolute;
+  top: 7.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42%;
+  min-width: 200px;
+  max-width: 300px;
+}
+.trainer-frame-img { display: block; width: 100%; height: auto; }
 .glass-stack {
   position: absolute;
   top: 7.5%;

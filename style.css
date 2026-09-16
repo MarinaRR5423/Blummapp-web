@@ -492,6 +492,9 @@ video.hero-visual-bg { object-fit: cover; }
 }
 .team-avatar-orange { background: var(--naranja-500); }
 .team-avatar-blue { background: var(--azul-500); }
+.team-avatar-dark { background: var(--neutro-950); }
+.team-design-credit { display: flex; flex-direction: column; gap: 8px; border-top: 1px solid rgba(10,10,10,0.1); padding-top: 20px; }
+.team-design-credit .team-role { margin-bottom: 0; }
 .team-info { display: flex; flex-direction: column; gap: 4px; }
 .team-info h4 { font-family: var(--font-heading); font-size: 20px; font-weight: 700; color: var(--neutro-950); }
 .team-role { font-size: 13px; font-weight: 700; color: var(--neutro-500); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; }

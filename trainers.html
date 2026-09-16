@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blumm · Para entrenadoras personales</title>
+  <meta name="description" content="Descubre cómo Blumm puede ayudarte a llevar a tus alumnas al siguiente nivel.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=13">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1379456450843415');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1379456450843415&ev=PageView&noscript=1"/></noscript>
+  <!-- End Meta Pixel Code -->
+  <!-- TikTok Pixel Code Start -->
+  <script>
+  !function (w, d, t) {
+    w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+    ttq.load('DAFTA2RC77U4RNF8LF8G');
+    ttq.page();
+  }(window, document, 'ttq');
+  </script>
+  <!-- TikTok Pixel Code End -->
+  <!-- Privacy-friendly analytics by Plausible -->
+  <script async src="https://plausible.io/js/pa-zUWs-SoObHdIVt2peKVUE.js"></script>
+  <script>
+    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+    plausible.init()
+  </script>
+</head>
+<body class="landing-body">
+
+  <svg style="display:none" aria-hidden="true">
+    <symbol id="ico-check-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/>
+    </symbol>
+    <symbol id="ico-alert-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+    </symbol>
+    <symbol id="ico-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>
+    </symbol>
+  </svg>
+
+  <div class="page-frame">
+
+    <!-- ── HEADER ── -->
+    <header>
+      <div class="brand">
+        <a href="index.html" style="display:flex;align-items:center">
+          <img src="blumm-logo-white.png" alt="Blumm" class="blumm-logo">
+        </a>
+      </div>
+      <a href="index.html" class="back-link" data-i18n="back">
+        <svg class="ico ico-sm" viewBox="0 0 24 24"><use href="#ico-arrow-left"/></svg>
+        <span data-i18n="back">Volver</span>
+      </a>
+      <div class="header-right">
+        <div class="lang-switcher">
+          <button class="lang-btn active" id="btn-es" onclick="setLang('es')">ES</button>
+          <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+          <button class="lang-btn" id="btn-fr" onclick="setLang('fr')">FR</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- ── ENTRENADORAS ── -->
+      <section class="beta-card blue-variant">
+        <div class="beta-copy">
+          <p class="eyebrow" data-i18n="trainers.eyebrow">Para entrenadoras personales</p>
+          <div class="hero-copy-content">
+            <h1 data-i18n="trainers.title">Blumm te ayuda a llevar a tus alumnas al siguiente nivel</h1>
+            <p class="lead" data-i18n="trainers.lead">Tus alumnas entrenan y se nutren con Blumm, y tú creas y ajustas sus programas de entrenamiento personalizados desde un único panel — sin hojas de cálculo ni mensajes sueltos.</p>
+          </div>
+          <ul class="beta-perks">
+            <li data-i18n="trainers.perk1">Tus alumnas siguen su ciclo, su nutrición y su entreno con la app Blumm</li>
+            <li data-i18n="trainers.perk2">Diseña programas y ejercicios personalizados para cada alumna desde tu panel</li>
+            <li data-i18n="trainers.perk3">Ve su progreso y adapta sus planes según su fase, en tiempo real</li>
+          </ul>
+        </div>
+
+        <div class="beta-form-card">
+          <form id="beta-form" novalidate>
+            <div class="beta-field">
+              <label for="beta-first-name" data-i18n="beta.form.firstName">Nombre</label>
+              <input id="beta-first-name" name="first_name" type="text" autocomplete="given-name" required>
+            </div>
+            <div class="beta-field">
+              <label for="beta-last-name" data-i18n="beta.form.lastName">Apellidos</label>
+              <input id="beta-last-name" name="last_name" type="text" autocomplete="family-name" required>
+            </div>
+            <div class="beta-field">
+              <label for="beta-email" data-i18n="beta.form.email">Email</label>
+              <input id="beta-email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="beta-field">
+              <label for="beta-how-heard" data-i18n="beta.form.howHeard">¿Cómo nos has conocido?</label>
+              <select id="beta-how-heard" name="how_heard" required>
+                <option value="" data-i18n="beta.form.howHeard.placeholder">Selecciona una opción</option>
+                <option value="instagram" data-i18n="beta.form.howHeard.instagram">Instagram</option>
+                <option value="tiktok" data-i18n="beta.form.howHeard.tiktok">TikTok</option>
+                <option value="google" data-i18n="beta.form.howHeard.google">Google</option>
+                <option value="friend" data-i18n="beta.form.howHeard.friend">Recomendación de una amiga</option>
+                <option value="other" data-i18n="beta.form.howHeard.other">Otro</option>
+              </select>
+            </div>
+            <button type="submit" class="beta-submit" id="beta-submit-btn" data-i18n="trainers.form.submit">Quiero saber más</button>
+            <p class="beta-form-error hidden" id="beta-form-error"></p>
+          </form>
+
+          <div class="beta-success hidden" id="beta-success">
+            <svg class="ico" viewBox="0 0 24 24" style="width:28px;height:28px;color:var(--azul-950)"><use href="#ico-check-circle"/></svg>
+            <h3 data-i18n="trainers.success.title">¡Recibido!</h3>
+            <p data-i18n="trainers.success.text">Gracias por tu interés. En breve nos pondremos en contacto contigo.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+  </div><!-- /.page-frame -->
+
+  <footer>
+    <div class="container">
+      <div class="footer-brand">
+        <img src="blumm-logo-white.png" alt="Blumm" style="height:24px;width:auto;opacity:0.9;">
+      </div>
+      <p data-i18n="footer.copy">© 2026 Blumm. Bienestar femenino sincronizado.</p>
+      <p class="small"><span data-i18n="footer.contact">¿Necesitas ayuda?</span> <a href="mailto:info@blummapp.com">info@blummapp.com</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const { createClient } = supabase;
+    const sb = createClient(
+      'https://lpcvkzmfemxziuhdmzpx.supabase.co',
+      'sb_publishable__JhEh4SY-q0NWRB5SO8-9Q_zLr_wszB'
+    );
+
+    const BT = {
+      es: {
+        back: 'Volver',
+        'trainers.eyebrow': 'Para entrenadoras personales',
+        'trainers.title': 'Blumm te ayuda a llevar a tus alumnas al siguiente nivel',
+        'trainers.lead': 'Tus alumnas entrenan y se nutren con Blumm, y tú creas y ajustas sus programas de entrenamiento personalizados desde un único panel — sin hojas de cálculo ni mensajes sueltos.',
+        'trainers.perk1': 'Tus alumnas siguen su ciclo, su nutrición y su entreno con la app Blumm',
+        'trainers.perk2': 'Diseña programas y ejercicios personalizados para cada alumna desde tu panel',
+        'trainers.perk3': 'Ve su progreso y adapta sus planes según su fase, en tiempo real',
+        'beta.form.firstName': 'Nombre', 'beta.form.lastName': 'Apellidos', 'beta.form.email': 'Email',
+        'beta.form.howHeard': '¿Cómo nos has conocido?', 'beta.form.howHeard.placeholder': 'Selecciona una opción',
+        'beta.form.howHeard.instagram': 'Instagram', 'beta.form.howHeard.tiktok': 'TikTok', 'beta.form.howHeard.google': 'Google',
+        'beta.form.howHeard.friend': 'Recomendación de una amiga', 'beta.form.howHeard.other': 'Otro',
+        'trainers.form.submit': 'Quiero saber más',
+        'trainers.form.error.generic': 'Algo ha ido mal. Inténtalo de nuevo en unos minutos.',
+        'trainers.form.error.duplicate': 'Ya hemos recibido tu solicitud — ¡gracias!',
+        'trainers.success.title': '¡Recibido!',
+        'trainers.success.text': 'Gracias por tu interés. En breve nos pondremos en contacto contigo.',
+        'footer.copy': '© 2026 Blumm. Bienestar femenino sincronizado.',
+        'footer.contact': '¿Necesitas ayuda?',
+      },
+      en: {
+        back: 'Back',
+        'trainers.eyebrow': 'For personal trainers',
+        'trainers.title': 'Blumm helps you take your clients to the next level',
+        'trainers.lead': "Your clients train and eat with Blumm, and you create and adjust their personalised training programmes from a single dashboard — no spreadsheets, no scattered messages.",
+        'trainers.perk1': 'Your clients track their cycle, nutrition and training with the Blumm app',
+        'trainers.perk2': 'Design personalised programmes and exercises for each client from your dashboard',
+        'trainers.perk3': 'See their progress and adjust their plans to their phase, in real time',
+        'beta.form.firstName': 'First name', 'beta.form.lastName': 'Last name', 'beta.form.email': 'Email',
+        'beta.form.howHeard': 'How did you hear about us?', 'beta.form.howHeard.placeholder': 'Select an option',
+        'beta.form.howHeard.instagram': 'Instagram', 'beta.form.howHeard.tiktok': 'TikTok', 'beta.form.howHeard.google': 'Google',
+        'beta.form.howHeard.friend': "A friend's recommendation", 'beta.form.howHeard.other': 'Other',
+        'trainers.form.submit': 'I want to know more',
+        'trainers.form.error.generic': 'Something went wrong. Please try again in a few minutes.',
+        'trainers.form.error.duplicate': "We've already received your request — thank you!",
+        'trainers.success.title': 'Got it!',
+        'trainers.success.text': "Thanks for your interest. We'll be in touch shortly.",
+        'footer.copy': '© 2026 Blumm. Femme wellness, synchronised.',
+        'footer.contact': 'Need help?',
+      },
+      fr: {
+        back: 'Retour',
+        'trainers.eyebrow': 'Pour les coachs sportifs',
+        'trainers.title': 'Blumm t\'aide à faire passer tes clientes au niveau supérieur',
+        'trainers.lead': "Tes clientes s'entraînent et se nourrissent avec Blumm, et toi tu crées et ajustes leurs programmes d'entraînement personnalisés depuis un seul tableau de bord — sans tableurs ni messages éparpillés.",
+        'trainers.perk1': "Tes clientes suivent leur cycle, leur nutrition et leur entraînement avec l'app Blumm",
+        'trainers.perk2': 'Crée des programmes et des exercices personnalisés pour chaque cliente depuis ton tableau de bord',
+        'trainers.perk3': 'Suis leur progression et ajuste leurs plans selon leur phase, en temps réel',
+        'beta.form.firstName': 'Prénom', 'beta.form.lastName': 'Nom', 'beta.form.email': 'Email',
+        'beta.form.howHeard': 'Comment nous as-tu connus ?', 'beta.form.howHeard.placeholder': 'Choisis une option',
+        'beta.form.howHeard.instagram': 'Instagram', 'beta.form.howHeard.tiktok': 'TikTok', 'beta.form.howHeard.google': 'Google',
+        'beta.form.howHeard.friend': "Recommandation d'une amie", 'beta.form.howHeard.other': 'Autre',
+        'trainers.form.submit': 'Je veux en savoir plus',
+        'trainers.form.error.generic': "Une erreur s'est produite. Réessaie dans quelques minutes.",
+        'trainers.form.error.duplicate': 'Nous avons déjà reçu ta demande — merci !',
+        'trainers.success.title': "C'est noté !",
+        'trainers.success.text': "Merci de ton intérêt. On te recontacte très vite.",
+        'footer.copy': '© 2026 Blumm. Bien-être féminin synchronisé.',
+        'footer.contact': "Besoin d'aide ?",
+      }
+    };
+
+    function setLang(lang) {
+      localStorage.setItem('meirins_lang', lang);
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (BT[lang] && BT[lang][key]) el.textContent = BT[lang][key];
+      });
+      ['es','en','fr'].forEach(l => {
+        const btn = document.getElementById('btn-' + l);
+        if (btn) btn.classList.toggle('active', l === lang);
+      });
+      currentLang = lang;
+    }
+
+    let currentLang = 'es';
+    const saved = localStorage.getItem('meirins_lang');
+    const browser = navigator.language?.slice(0,2);
+    const initial = (saved && BT[saved]) ? saved : (BT[browser] ? browser : 'es');
+    setLang(initial);
+
+    // ── Form submit ──
+    const form = document.getElementById('beta-form');
+    const submitBtn = document.getElementById('beta-submit-btn');
+    const errorEl = document.getElementById('beta-form-error');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorEl.classList.add('hidden');
+      submitBtn.disabled = true;
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = '…';
+
+      const first_name = document.getElementById('beta-first-name').value.trim();
+      const last_name = document.getElementById('beta-last-name').value.trim();
+      const email = document.getElementById('beta-email').value.trim();
+      const how_heard = document.getElementById('beta-how-heard').value;
+
+      const { error } = await sb.from('trainer_leads').insert({
+        first_name, last_name, email, how_heard,
+        locale: currentLang,
+      });
+
+      if (error) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+        const isDuplicate = error.code === '23505';
+        errorEl.textContent = BT[currentLang][isDuplicate ? 'trainers.form.error.duplicate' : 'trainers.form.error.generic'];
+        errorEl.classList.remove('hidden');
+        return;
+      }
+
+      form.classList.add('hidden');
+      document.getElementById('beta-success').classList.remove('hidden');
+    });
+  </script>
+</body>
+</html>

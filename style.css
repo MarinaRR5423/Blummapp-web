@@ -1029,7 +1029,7 @@ footer a:hover { color: var(--white); }
   #main-nav.tab-nav.open { display: flex; }
   .tab-nav-item { width: 100%; justify-content: flex-start; padding: 10px 12px; }
   .header-right { gap: 8px; }
-  .lang-switcher { display: none; }
+  .nav-download { display: none; }
 
   .store-buttons { flex-direction: column; }
   .funcionalidades-card { gap: 24px; }

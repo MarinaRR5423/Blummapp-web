@@ -398,19 +398,25 @@
 
   <script>
     /* ── Configuración de descarga ──────────────────────────────────────
-       Mientras la app está en revisión / lista de espera: APP_IS_LIVE = false
-       → los botones de descarga llevan a beta.html.
-       Cuando la app esté publicada en las tiendas: poner APP_IS_LIVE = true
-       → los botones abren directamente App Store / Google Play.
+       Cada tienda tiene su propio flag: en cuanto la app esté publicada
+       en esa tienda, poner su flag a true → el botón abre la tienda
+       directamente. Mientras esté a false, lleva a la lista de espera.
     */
-    const APP_IS_LIVE = false;
-    const APP_STORE_URL  = 'https://apps.apple.com/app/id6782055959';
+    const IOS_LIVE = true;
+    const ANDROID_LIVE = false;
+    const APP_STORE_URL  = 'https://apps.apple.com/us/app/blumm/id6782055959';
     const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.marina13.meirins';
 
+    function isLive(platform) {
+      if (platform === 'ios') return IOS_LIVE;
+      if (platform === 'android') return ANDROID_LIVE;
+      return false; // escritorio / plataforma desconocida
+    }
+
     function downloadUrl(platform) {
-      if (platform === 'ios')     return APP_IS_LIVE ? APP_STORE_URL  : 'beta.html?platform=ios';
-      if (platform === 'android') return APP_IS_LIVE ? PLAY_STORE_URL : 'beta.html?platform=android';
-      return APP_IS_LIVE ? null : 'beta.html'; // escritorio / plataforma desconocida
+      if (platform === 'ios')     return IOS_LIVE ? APP_STORE_URL  : 'beta.html?platform=ios';
+      if (platform === 'android') return ANDROID_LIVE ? PLAY_STORE_URL : 'beta.html?platform=android';
+      return null; // escritorio / plataforma desconocida: no sabemos qué tienda ofrecer, se hace scroll al hero
     }
 
     function trackLead() {
@@ -423,7 +429,7 @@
       if (e) e.preventDefault();
       trackLead();
       const url = downloadUrl(platform);
-      if (APP_IS_LIVE) window.open(url, '_blank', 'noopener');
+      if (isLive(platform)) window.open(url, '_blank', 'noopener');
       else location.href = url;
     }
 
@@ -617,10 +623,10 @@
       const platform = /iPhone|iPad|iPod/i.test(ua) ? 'ios' : /Android/i.test(ua) ? 'android' : null;
       const url = downloadUrl(platform);
       if (url) {
-        if (APP_IS_LIVE && platform) window.open(url, '_blank', 'noopener');
+        if (isLive(platform)) window.open(url, '_blank', 'noopener');
         else location.href = url;
       } else {
-        // escritorio con app publicada: sin tienda única, llevar al hero con ambos botones
+        // escritorio, o plataforma sin tienda única: llevar al hero con ambos botones
         document.getElementById('app')?.scrollIntoView({ behavior: 'smooth' });
       }
       closeMenu();

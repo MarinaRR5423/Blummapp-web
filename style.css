@@ -431,6 +431,74 @@ video.hero-visual-bg { object-fit: cover; }
 }
 .funcionalidades-heading .lead { font-size: 18px; line-height: 1.3; color: var(--neutro-950); }
 
+/* ════════════════════════════════════
+   PRECIOS
+   ════════════════════════════════════ */
+.pricing-card {
+  background: var(--neutro-100);
+  border-radius: var(--rd-xl);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+.plan-card {
+  background: var(--neutro-0);
+  border-radius: var(--rd-xl);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  color: var(--neutro-950);
+}
+.plan-name { font-family: var(--font-heading); font-size: 24px; font-weight: 700; letter-spacing: -0.01em; }
+.plan-price { font-family: var(--font-heading); font-size: 44px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; }
+.plan-period { font-size: 16px; font-weight: 700; letter-spacing: 0; }
+.plan-sub { font-size: 14px; line-height: 1.3; color: var(--neutro-500); margin-top: 6px; }
+.plan-list { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 15px; }
+.plan-list li { position: relative; padding-left: 22px; }
+.plan-list li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--verde-500); font-weight: 700; }
+.plan-list-blue li::before { color: var(--azul-500); }
+.plan-note { font-size: 13px; color: var(--neutro-500); }
+
+.plan-card-premium { background: var(--naranja-500); color: var(--naranja-950); }
+.plan-card-premium .plan-sub { color: var(--naranja-950); }
+.plan-card-premium .plan-list li::before { color: var(--naranja-950); }
+.plan-toggle { display: flex; gap: 4px; }
+.plan-toggle-btn {
+  border: none;
+  border-radius: var(--rd-m);
+  padding: 6px 14px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  background: rgba(255,255,255,0.35);
+  color: var(--naranja-950);
+}
+.plan-toggle-btn.active { background: var(--naranja-950); color: var(--neutro-0); }
+.plan-cta {
+  margin-top: auto;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--rd-m);
+  background: var(--neutro-950);
+  color: var(--neutro-0);
+  font-size: 17px;
+  transition: background 0.15s;
+}
+.plan-cta:hover { background: var(--neutro-800); }
+.pricing-footnote { font-size: 13px; line-height: 1.4; color: var(--neutro-500); }
+.pricing-footnote a { color: var(--azul-500); font-weight: 700; }
+@media (max-width: 900px) {
+  .pricing-grid { grid-template-columns: 1fr; }
+  .pricing-card { padding: 20px; gap: 24px; }
+  .plan-card { padding: 22px; }
+}
+
 .bento-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1008,7 +1076,8 @@ footer a:hover { color: var(--white); }
   .legal-doc-card hr { margin: 32px 0; }
 }
 
-@media (max-width: 640px) {
+/* El menú no cabe en una línea por debajo de ~1150px (ES/FR, 6 enlaces): colapsa a hamburguesa */
+@media (max-width: 1180px) {
   .hamburger { display: flex; }
   header { position: relative; }
 
@@ -1028,6 +1097,9 @@ footer a:hover { color: var(--white); }
   }
   #main-nav.tab-nav.open { display: flex; }
   .tab-nav-item { width: 100%; justify-content: flex-start; padding: 10px 12px; }
+}
+
+@media (max-width: 640px) {
   .header-right { gap: 8px; }
   .nav-download { display: none; }
 

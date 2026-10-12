@@ -98,6 +98,7 @@
     <nav id="main-nav" class="tab-nav">
       <a href="#app" class="tab-nav-item active" data-i18n="nav.app" onclick="closeMenu()">App</a>
       <a href="#funcionalidades" class="tab-nav-item" data-i18n="nav.features" onclick="closeMenu()">Funcionalidades</a>
+      <a href="#precios" class="tab-nav-item" data-i18n="nav.pricing" onclick="closeMenu()">Precios</a>
       <a href="#entrenadora" class="tab-nav-item" data-i18n="nav.trainers" onclick="closeMenu()">Entrenadoras</a>
       <a href="#equipo" class="tab-nav-item" data-i18n="nav.team" onclick="closeMenu()">Equipo</a>
       <a href="#legal" class="tab-nav-item" data-i18n="nav.help" onclick="closeMenu()">Ayuda</a>
@@ -255,6 +256,64 @@
     </section>
 
     <!-- ── ENTRENADORA ── -->
+    <!-- ── PRECIOS ── -->
+    <section class="pricing-card" id="precios">
+      <p class="eyebrow" data-i18n="pricing.eyebrow">Precios</p>
+      <div class="funcionalidades-heading">
+        <h2 data-i18n="pricing.title">Empieza gratis. Pasa a Premium cuando quieras.</h2>
+        <p class="lead" data-i18n="pricing.lead">Tu ciclo y los artículos son gratis siempre. Los 30 primeros días tienes todo desbloqueado, sin tarjeta.</p>
+      </div>
+      <div class="pricing-grid">
+
+        <div class="plan-card">
+          <h3 class="plan-name" data-i18n="plan.free.name">Gratis</h3>
+          <p class="plan-price">0 €</p>
+          <p class="plan-sub" data-i18n="plan.free.sub">Para siempre</p>
+          <ul class="plan-list">
+            <li data-i18n="plan.free.f1">Seguimiento del ciclo</li>
+            <li data-i18n="plan.free.f2">Predicciones y calendario</li>
+            <li data-i18n="plan.free.f3">Artículos y guías</li>
+          </ul>
+        </div>
+
+        <div class="plan-card">
+          <h3 class="plan-name" data-i18n="plan.earn.name">Earn</h3>
+          <p class="plan-price">0 €</p>
+          <p class="plan-sub" data-i18n="plan.earn.sub">Premium sin pagar</p>
+          <ul class="plan-list plan-list-blue">
+            <li data-i18n="plan.earn.f1">1 story con @blumm: 3 meses</li>
+            <li data-i18n="plan.earn.f2">3 amigas que se unan: 3 meses</li>
+            <li data-i18n="plan.earn.f3">Reseña en la store: 7 días</li>
+          </ul>
+          <p class="plan-note" data-i18n="plan.earn.note">Acumulable, hasta 12 meses al año</p>
+        </div>
+
+        <div class="plan-card plan-card-premium">
+          <h3 class="plan-name" data-i18n="plan.premium.name">Premium</h3>
+          <div class="plan-toggle" role="group" aria-label="Plan">
+            <button type="button" class="plan-toggle-btn active" id="plan-btn-annual" onclick="setPlan('annual')" data-i18n="plan.premium.annual">Anual</button>
+            <button type="button" class="plan-toggle-btn" id="plan-btn-monthly" onclick="setPlan('monthly')" data-i18n="plan.premium.monthly">Mensual</button>
+          </div>
+          <div id="plan-annual">
+            <p class="plan-price">39,99 € <span class="plan-period" data-i18n="plan.premium.perYear">/año</span></p>
+            <p class="plan-sub" data-i18n="plan.premium.annualNote">Equivale a 3,33 € al mes (ahorras un 58 %)</p>
+          </div>
+          <div id="plan-monthly" class="hidden">
+            <p class="plan-price">7,99 € <span class="plan-period" data-i18n="plan.premium.perMonth">/mes</span></p>
+            <p class="plan-sub" data-i18n="plan.premium.monthlyNote">Cancelas cuando quieras</p>
+          </div>
+          <ul class="plan-list">
+            <li data-i18n="plan.premium.f1">Recetas, macros y lista de la compra</li>
+            <li data-i18n="plan.premium.f2">Entrenamiento y suelo pélvico</li>
+            <li data-i18n="plan.premium.f3">Sueño y peso con seguimiento completo</li>
+          </ul>
+          <a href="beta.html" class="plan-cta" onclick="smartDownload(event)" data-i18n="plan.premium.cta">Probar 30 días gratis</a>
+        </div>
+
+      </div>
+      <p class="pricing-footnote"><span data-i18n="pricing.footnote">Precios en euros. Se renueva automáticamente y se cancela desde los ajustes de tu cuenta de Apple. Disponible en iOS, Android muy pronto.</span> <a href="terms.html" data-i18n="pricing.terms">Términos de uso</a></p>
+    </section>
+
     <section class="trainer-card" id="entrenadora">
       <div class="trainer-copy">
         <p class="eyebrow eyebrow-on-blue" data-i18n="trainer.tag">Profesionales</p>
@@ -435,7 +494,21 @@
 
     const T = {
       es: {
-        'nav.app': 'App', 'nav.features': 'Funcionalidades', 'nav.trainers': 'Entrenadoras', 'nav.team': 'Equipo', 'nav.help': 'Ayuda', 'nav.download': 'Descarga',
+        'nav.app': 'App', 'nav.features': 'Funcionalidades', 'nav.pricing': 'Precios', 'nav.trainers': 'Entrenadoras', 'nav.team': 'Equipo', 'nav.help': 'Ayuda', 'nav.download': 'Descarga',
+        'pricing.eyebrow': 'Precios', 'pricing.title': 'Empieza gratis. Pasa a Premium cuando quieras.',
+        'pricing.lead': 'Tu ciclo y los artículos son gratis siempre. Los 30 primeros días tienes todo desbloqueado, sin tarjeta.',
+        'plan.free.name': 'Gratis', 'plan.free.sub': 'Para siempre',
+        'plan.free.f1': 'Seguimiento del ciclo', 'plan.free.f2': 'Predicciones y calendario', 'plan.free.f3': 'Artículos y guías',
+        'plan.earn.name': 'Earn', 'plan.earn.sub': 'Premium sin pagar',
+        'plan.earn.f1': '1 story con @blumm: 3 meses', 'plan.earn.f2': '3 amigas que se unan: 3 meses', 'plan.earn.f3': 'Reseña en la store: 7 días',
+        'plan.earn.note': 'Acumulable, hasta 12 meses al año',
+        'plan.premium.name': 'Premium', 'plan.premium.annual': 'Anual', 'plan.premium.monthly': 'Mensual',
+        'plan.premium.perYear': '/año', 'plan.premium.perMonth': '/mes',
+        'plan.premium.annualNote': 'Equivale a 3,33 € al mes (ahorras un 58 %)', 'plan.premium.monthlyNote': 'Cancelas cuando quieras',
+        'plan.premium.f1': 'Recetas, macros y lista de la compra', 'plan.premium.f2': 'Entrenamiento y suelo pélvico', 'plan.premium.f3': 'Sueño y peso con seguimiento completo',
+        'plan.premium.cta': 'Probar 30 días gratis',
+        'pricing.footnote': 'Precios en euros. Se renueva automáticamente y se cancela desde los ajustes de tu cuenta de Apple. Disponible en iOS, Android muy pronto.',
+        'pricing.terms': 'Términos de uso',
         'hero.eyebrow': 'Tu app de salud femenina',
         'hero.title': 'Tu ciclo, convertido en un plan diario.',
         'hero.lead': 'Nutrición, entrenamiento y lista de la compra según tu fase, tu programa y tu etapa vital. Con base fisiológica, no de calendario.',
@@ -495,7 +568,21 @@
         'footer.help': 'Ayuda', 'footer.privacy': 'Privacidad', 'footer.terms': 'Términos', 'footer.legal': 'Aviso legal', 'footer.contact': '¿Necesitas ayuda?',
       },
       en: {
-        'nav.app': 'App', 'nav.features': 'Features', 'nav.trainers': 'Trainers', 'nav.team': 'Team', 'nav.help': 'Help', 'nav.download': 'Download',
+        'nav.app': 'App', 'nav.features': 'Features', 'nav.pricing': 'Pricing', 'nav.trainers': 'Trainers', 'nav.team': 'Team', 'nav.help': 'Help', 'nav.download': 'Download',
+        'pricing.eyebrow': 'Pricing', 'pricing.title': 'Start for free. Go Premium whenever you want.',
+        'pricing.lead': 'Your cycle and the articles are always free. For the first 30 days everything is unlocked, no card needed.',
+        'plan.free.name': 'Free', 'plan.free.sub': 'Forever',
+        'plan.free.f1': 'Cycle tracking', 'plan.free.f2': 'Predictions and calendar', 'plan.free.f3': 'Articles and guides',
+        'plan.earn.name': 'Earn', 'plan.earn.sub': 'Premium without paying',
+        'plan.earn.f1': '1 story with @blumm: 3 months', 'plan.earn.f2': '3 friends who join: 3 months', 'plan.earn.f3': 'Store review: 7 days',
+        'plan.earn.note': 'Stackable, up to 12 months a year',
+        'plan.premium.name': 'Premium', 'plan.premium.annual': 'Annual', 'plan.premium.monthly': 'Monthly',
+        'plan.premium.perYear': '/year', 'plan.premium.perMonth': '/month',
+        'plan.premium.annualNote': 'Works out at €3.33 a month (save 58%)', 'plan.premium.monthlyNote': 'Cancel anytime',
+        'plan.premium.f1': 'Recipes, macros and shopping list', 'plan.premium.f2': 'Training and pelvic floor', 'plan.premium.f3': 'Sleep and weight with full tracking',
+        'plan.premium.cta': 'Try free for 30 days',
+        'pricing.footnote': 'Prices in euros. Renews automatically and can be cancelled from your Apple account settings. Available on iOS, Android coming soon.',
+        'pricing.terms': 'Terms of use',
         'hero.eyebrow': 'Your female health app',
         'hero.title': 'Your cycle, turned into a daily plan.',
         'hero.lead': 'Nutrition, training and shopping list based on your phase, your programme and your life stage. Physiology-based, not calendar-based.',
@@ -555,7 +642,21 @@
         'footer.help': 'Help', 'footer.privacy': 'Privacy', 'footer.terms': 'Terms', 'footer.legal': 'Legal notice', 'footer.contact': 'Need help?',
       },
       fr: {
-        'nav.app': "L'app", 'nav.features': 'Fonctionnalités', 'nav.trainers': 'Coachs', 'nav.team': 'Équipe', 'nav.help': 'Aide', 'nav.download': 'Télécharger',
+        'nav.app': "L'app", 'nav.features': 'Fonctionnalités', 'nav.pricing': 'Tarifs', 'nav.trainers': 'Coachs', 'nav.team': 'Équipe', 'nav.help': 'Aide', 'nav.download': 'Télécharger',
+        'pricing.eyebrow': 'Tarifs', 'pricing.title': 'Commence gratuitement. Passe à Premium quand tu veux.',
+        'pricing.lead': "Ton cycle et les articles sont toujours gratuits. Pendant les 30 premiers jours, tout est débloqué, sans carte.",
+        'plan.free.name': 'Gratuit', 'plan.free.sub': 'Pour toujours',
+        'plan.free.f1': 'Suivi du cycle', 'plan.free.f2': 'Prédictions et calendrier', 'plan.free.f3': 'Articles et guides',
+        'plan.earn.name': 'Earn', 'plan.earn.sub': 'Premium sans payer',
+        'plan.earn.f1': '1 story avec @blumm : 3 mois', 'plan.earn.f2': '3 amies qui rejoignent : 3 mois', 'plan.earn.f3': 'Avis dans le store : 7 jours',
+        'plan.earn.note': "Cumulable, jusqu'à 12 mois par an",
+        'plan.premium.name': 'Premium', 'plan.premium.annual': 'Annuel', 'plan.premium.monthly': 'Mensuel',
+        'plan.premium.perYear': '/an', 'plan.premium.perMonth': '/mois',
+        'plan.premium.annualNote': "Soit 3,33 € par mois (tu économises 58 %)", 'plan.premium.monthlyNote': 'Résiliable à tout moment',
+        'plan.premium.f1': 'Recettes, macros et liste de courses', 'plan.premium.f2': 'Entraînement et plancher pelvien', 'plan.premium.f3': 'Sommeil et poids avec suivi complet',
+        'plan.premium.cta': 'Essayer 30 jours gratuitement',
+        'pricing.footnote': "Prix en euros. Se renouvelle automatiquement et s'annule depuis les réglages de ton compte Apple. Disponible sur iOS, Android bientôt.",
+        'pricing.terms': "Conditions d'utilisation",
         'hero.eyebrow': 'Ton app de santé féminine',
         'hero.title': 'Ton cycle, transformé en plan quotidien.',
         'hero.lead': "Nutrition, entraînement et liste de courses selon ta phase, ton programme et ton étape de vie. Une base physiologique, pas un calendrier.",
@@ -615,6 +716,14 @@
         'footer.help': 'Aide', 'footer.privacy': 'Confidentialité', 'footer.terms': 'Conditions', 'footer.legal': 'Mentions légales', 'footer.contact': "Besoin d'aide ?",
       }
     };
+
+    // Selector Anual / Mensual de la tarjeta Premium
+    function setPlan(plan) {
+      document.getElementById('plan-annual').classList.toggle('hidden', plan !== 'annual');
+      document.getElementById('plan-monthly').classList.toggle('hidden', plan !== 'monthly');
+      document.getElementById('plan-btn-annual').classList.toggle('active', plan === 'annual');
+      document.getElementById('plan-btn-monthly').classList.toggle('active', plan === 'monthly');
+    }
 
     function smartDownload(e) {
       if (e) e.preventDefault();

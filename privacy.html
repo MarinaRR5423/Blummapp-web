@@ -10,30 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=13">
-  <!-- Meta Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window,document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1379456450843415');
-    fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1379456450843415&ev=PageView&noscript=1"/></noscript>
-  <!-- End Meta Pixel Code -->
-  <!-- TikTok Pixel Code Start -->
-  <script>
-  !function (w, d, t) {
-    w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-    ttq.load('DAFTA2RC77U4RNF8LF8G');
-    ttq.page();
-  }(window, document, 'ttq');
-  </script>
-  <!-- TikTok Pixel Code End -->
+  <script src="analytics.js?v=1" defer></script>
   <!-- Privacy-friendly analytics by Plausible -->
   <script async src="https://plausible.io/js/pa-zUWs-SoObHdIVt2peKVUE.js"></script>
   <script>
@@ -76,7 +53,7 @@
 <div id="lang-es" class="lang-section active">
 <section>
   <h2>Política de Privacidad</h2>
-  <p class="date">Última actualización: 10 de septiembre de 2026</p>
+  <p class="date">Última actualización: 13 de octubre de 2026</p>
 
   <p>Esta Política de Privacidad describe cómo <strong>Blumm</strong> ("nosotros", "la aplicación") recopila, usa y protege tu información personal cuando usas nuestra aplicación móvil.</p>
 
@@ -109,13 +86,22 @@
     <li><strong>Cloudflare:</strong> usamos Cloudflare Turnstile para proteger el inicio de sesión y el registro frente a bots. Procesa datos técnicos de la solicitud (como la dirección IP) únicamente con ese fin de seguridad.</li>
     <li><strong>Apple App Store / Google Play:</strong> el procesamiento de los pagos de la suscripción lo gestionan Apple o Google, según la plataforma. No recibimos ni almacenamos los datos de tu tarjeta; solo el estado de la suscripción (activa, caducada, etc.).</li>
     <li><strong>Expo / EAS:</strong> plataforma de distribución de actualizaciones de la app.</li>
+    <li><strong>Resend:</strong> envío de correos (confirmación de cuenta, enlaces de acceso y avisos de la web).</li>
   </ul>
-  <p>No compartimos tu información con terceros para fines publicitarios o comerciales.</p>
+  <p>En la app no vendemos tu información ni la compartimos con terceros para fines publicitarios o comerciales. En la web, los píxeles de publicidad de Meta y TikTok solo se activan si los aceptas (ver la sección «Sitio web, analítica y cookies»).</p>
 
-  <h3>5. Seguridad</h3>
+  <h3 id="web-es">5. Sitio web, analítica y cookies</h3>
+  <p>Esta sección se aplica a quien visita <strong>blummapp.com</strong>, además de a quien usa la app.</p>
+  <p><strong>Formularios.</strong> Si te apuntas a la lista de espera o rellenas el formulario para entrenadoras, tratamos tu nombre, apellidos, email, cómo nos conociste, tu idioma y, en la lista de espera, tu plataforma. Los usamos para responderte y gestionar tu solicitud. La base legal es tu consentimiento y la aplicación de medidas a petición tuya. Se guardan en Supabase (UE) y recibimos un aviso interno por email, enviado con Resend. Los conservamos mientras sigas interesada y, como máximo, 24 meses desde el último contacto. Puedes pedir su baja en cualquier momento.</p>
+  <p><strong>Analítica sin cookies.</strong> Para saber qué partes de la web funcionan usamos PostHog (servidores en la UE) y Plausible. Miden páginas vistas, de dónde llegas (por ejemplo, un anuncio o una red social), país aproximado, tipo de dispositivo y clics en los botones de descarga y envíos de formularios. No usan cookies, no te identifican, no leen lo que escribes en los formularios y no guardan tu dirección IP. La base legal es nuestro interés legítimo en mejorar el sitio; puedes oponerte escribiéndonos.</p>
+  <p><strong>Publicidad (Meta y TikTok).</strong> Solo si pulsas «Aceptar» en el banner, cargamos los píxeles de Meta (Meta Platforms Ireland) y TikTok (TikTok Technology Limited), que miden nuestros anuncios y permiten mostrártelos de nuevo. Pueden instalar cookies (como _fbp y _ttp) y recibir datos de tu visita, que pueden tratar fuera de la UE según sus propias políticas. Si rechazas, no se carga nada de ellos. Tu consentimiento es voluntario y puedes retirarlo en cualquier momento desde <a href="#" data-consent-open>Preferencias de cookies</a>, sin que afecte a lo anterior. No enviamos a estas plataformas lo que escribes en los formularios.</p>
+  <p><strong>Almacenamiento local.</strong> Guardamos en tu navegador tu elección del banner y tu idioma, para que la web funcione como esperas. No se usan para publicidad.</p>
+  <p>Tus derechos son los descritos en la sección «Tus derechos (RGPD)».</p>
+
+  <h3>6. Seguridad</h3>
   <p>Usamos cifrado en tránsito (HTTPS/TLS) y en reposo para proteger tus datos. El acceso a tu cuenta está protegido por contraseña, y la sesión de autenticación se guarda en el almacenamiento cifrado del sistema operativo de tu dispositivo (Keychain en iOS, Keystore en Android).</p>
 
-  <h3>6. Tus derechos (RGPD)</h3>
+  <h3>7. Tus derechos (RGPD)</h3>
   <p>Si resides en el Espacio Económico Europeo, tienes derecho a:</p>
   <ul>
     <li>Acceder a tus datos personales.</li>
@@ -126,13 +112,13 @@
   </ul>
   <p>Para ejercer estos derechos, contacta con nosotros en el correo indicado al final de esta página.</p>
 
-  <h3>7. Retención de datos</h3>
+  <h3>8. Retención de datos</h3>
   <p>Conservamos tus datos mientras tu cuenta esté activa. Si eliminas tu cuenta, borramos todos tus datos en un plazo de 30 días.</p>
 
-  <h3>8. Menores</h3>
+  <h3>9. Menores</h3>
   <p>Blumm no está dirigida a menores de 13 años. Si eres menor de 13 años, no uses la aplicación.</p>
 
-  <h3>9. Cambios en esta política</h3>
+  <h3>10. Cambios en esta política</h3>
   <p>Podemos actualizar esta política ocasionalmente. Te notificaremos de cambios significativos mediante la app.</p>
 
   <div class="contact-box">
@@ -146,7 +132,7 @@
 <div id="lang-en" class="lang-section">
 <section>
   <h2>Privacy Policy</h2>
-  <p class="date">Last updated: September 10, 2026</p>
+  <p class="date">Last updated: October 13, 2026</p>
 
   <p>This Privacy Policy describes how <strong>Blumm</strong> ("we", "the app") collects, uses, and protects your personal information when you use our mobile application.</p>
 
@@ -178,13 +164,22 @@
     <li><strong>Cloudflare:</strong> we use Cloudflare Turnstile to protect login and sign-up against bots. It processes technical request data (such as your IP address) solely for that security purpose.</li>
     <li><strong>Apple App Store / Google Play:</strong> subscription payment processing is handled by Apple or Google, depending on the platform. We do not receive or store your card details — only your subscription status (active, expired, etc.).</li>
     <li><strong>Expo / EAS:</strong> app update distribution platform.</li>
+    <li><strong>Resend:</strong> email delivery (account confirmation, sign-in links and website alerts).</li>
   </ul>
-  <p>We do not share your information with third parties for advertising or commercial purposes.</p>
+  <p>In the app, we do not sell your information or share it with third parties for advertising or commercial purposes. On the website, the Meta and TikTok advertising pixels are only activated if you accept them (see the “Website, analytics and cookies” section).</p>
 
-  <h3>5. Security</h3>
+  <h3 id="web-en">5. Website, analytics and cookies</h3>
+  <p>This section applies to anyone who visits <strong>blummapp.com</strong>, in addition to people who use the app.</p>
+  <p><strong>Forms.</strong> If you join the waiting list or fill in the trainers form, we process your first name, last name, email, how you heard about us, your language and, for the waiting list, your platform. We use them to reply to you and manage your request. The legal basis is your consent and steps taken at your request. They are stored in Supabase (EU) and we receive an internal email alert, sent with Resend. We keep them while you remain interested and for a maximum of 24 months after our last contact. You can ask us to delete them at any time.</p>
+  <p><strong>Cookie-free analytics.</strong> To understand which parts of the site work, we use PostHog (EU servers) and Plausible. They measure page views, where you come from (for example an ad or a social network), approximate country, device type, and clicks on download buttons and form submissions. They do not use cookies, do not identify you, do not read what you type in forms and do not store your IP address. The legal basis is our legitimate interest in improving the site; you can object by writing to us.</p>
+  <p><strong>Advertising (Meta and TikTok).</strong> Only if you click “Accept” on the banner do we load the Meta (Meta Platforms Ireland) and TikTok (TikTok Technology Limited) pixels, which measure our ads and let us show them to you again. They may set cookies (such as _fbp and _ttp) and receive data about your visit, which they may process outside the EU under their own policies. If you reject, nothing from them is loaded. Your consent is voluntary and you can withdraw it at any time from <a href="#" data-consent-open>Cookie preferences</a>, without affecting what happened before. We do not send what you type in forms to these platforms.</p>
+  <p><strong>Local storage.</strong> We store your banner choice and your language in your browser so the site works as you expect. They are not used for advertising.</p>
+  <p>Your rights are those described in the “Your Rights (GDPR)” section.</p>
+
+  <h3>6. Security</h3>
   <p>We use encryption in transit (HTTPS/TLS) and at rest to protect your data. Your account is protected by a password, and your authentication session is stored in your device's operating-system encrypted storage (Keychain on iOS, Keystore on Android).</p>
 
-  <h3>6. Your Rights (GDPR)</h3>
+  <h3>7. Your Rights (GDPR)</h3>
   <ul>
     <li>Access your personal data.</li>
     <li>Correct inaccurate data.</li>
@@ -194,13 +189,13 @@
   </ul>
   <p>To exercise these rights, contact us at the email address at the bottom of this page.</p>
 
-  <h3>7. Data Retention</h3>
+  <h3>8. Data Retention</h3>
   <p>We retain your data while your account is active. If you delete your account, we erase all your data within 30 days.</p>
 
-  <h3>8. Children</h3>
+  <h3>9. Children</h3>
   <p>Blumm is not directed at children under 13. If you are under 13, please do not use the app.</p>
 
-  <h3>9. Changes to This Policy</h3>
+  <h3>10. Changes to This Policy</h3>
   <p>We may update this policy occasionally. We will notify you of significant changes through the app.</p>
 
   <div class="contact-box">
@@ -214,7 +209,7 @@
 <div id="lang-fr" class="lang-section">
 <section>
   <h2>Politique de Confidentialité</h2>
-  <p class="date">Dernière mise à jour : 10 septembre 2026</p>
+  <p class="date">Dernière mise à jour : 13 octobre 2026</p>
 
   <p>Cette Politique de Confidentialité décrit comment <strong>Blumm</strong> ("nous", "l'application") collecte, utilise et protège vos informations personnelles lorsque vous utilisez notre application mobile.</p>
 
@@ -246,12 +241,22 @@
     <li><strong>Cloudflare :</strong> nous utilisons Cloudflare Turnstile pour protéger la connexion et l'inscription contre les bots. Il traite des données techniques de la requête (comme l'adresse IP) uniquement à cette fin de sécurité.</li>
     <li><strong>Apple App Store / Google Play :</strong> le traitement des paiements de l'abonnement est géré par Apple ou Google, selon la plateforme. Nous ne recevons ni ne stockons vos données de carte — uniquement l'état de votre abonnement (actif, expiré, etc.).</li>
     <li><strong>Expo / EAS :</strong> distribution des mises à jour de l'app.</li>
+    <li><strong>Resend :</strong> envoi d'e-mails (confirmation de compte, liens de connexion et alertes du site).</li>
   </ul>
+  <p>Dans l'app, nous ne vendons pas vos informations et ne les partageons pas avec des tiers à des fins publicitaires ou commerciales. Sur le site web, les pixels publicitaires de Meta et TikTok ne s'activent que si vous les acceptez (voir la section « Site web, analyse et cookies »).</p>
 
-  <h3>5. Sécurité</h3>
+  <h3 id="web-fr">5. Site web, analyse et cookies</h3>
+  <p>Cette section s'applique à toute personne qui visite <strong>blummapp.com</strong>, en plus des utilisatrices de l'app.</p>
+  <p><strong>Formulaires.</strong> Si vous vous inscrivez sur la liste d'attente ou remplissez le formulaire pour les coachs, nous traitons votre prénom, votre nom, votre e-mail, la façon dont vous nous avez connus, votre langue et, pour la liste d'attente, votre plateforme. Nous les utilisons pour vous répondre et gérer votre demande. La base légale est votre consentement et l'exécution de mesures prises à votre demande. Ils sont stockés chez Supabase (UE) et nous recevons une alerte interne par e-mail, envoyée avec Resend. Nous les conservons tant que vous restez intéressée et au maximum 24 mois après notre dernier contact. Vous pouvez demander leur suppression à tout moment.</p>
+  <p><strong>Analyse sans cookies.</strong> Pour savoir quelles parties du site fonctionnent, nous utilisons PostHog (serveurs dans l'UE) et Plausible. Ils mesurent les pages vues, votre provenance (par exemple une publicité ou un réseau social), le pays approximatif, le type d'appareil, les clics sur les boutons de téléchargement et les envois de formulaires. Ils n'utilisent pas de cookies, ne vous identifient pas, ne lisent pas ce que vous saisissez dans les formulaires et ne conservent pas votre adresse IP. La base légale est notre intérêt légitime à améliorer le site ; vous pouvez vous y opposer en nous écrivant.</p>
+  <p><strong>Publicité (Meta et TikTok).</strong> Uniquement si vous cliquez sur « Accepter » dans le bandeau, nous chargeons les pixels de Meta (Meta Platforms Ireland) et de TikTok (TikTok Technology Limited), qui mesurent nos publicités et permettent de vous les montrer à nouveau. Ils peuvent déposer des cookies (comme _fbp et _ttp) et recevoir des données sur votre visite, qu'ils peuvent traiter hors de l'UE selon leurs propres politiques. Si vous refusez, rien de leur part n'est chargé. Votre consentement est volontaire et vous pouvez le retirer à tout moment depuis <a href="#" data-consent-open>Préférences cookies</a>, sans effet sur ce qui s'est passé avant. Nous n'envoyons pas à ces plateformes ce que vous saisissez dans les formulaires.</p>
+  <p><strong>Stockage local.</strong> Nous conservons dans votre navigateur votre choix du bandeau et votre langue, pour que le site fonctionne comme vous l'attendez. Ils ne servent pas à la publicité.</p>
+  <p>Vos droits sont ceux décrits dans la section « Vos droits (RGPD) ».</p>
+
+  <h3>6. Sécurité</h3>
   <p>Nous utilisons le chiffrement en transit (HTTPS/TLS) et au repos pour protéger vos données. Votre compte est protégé par un mot de passe, et votre session d'authentification est stockée dans le stockage chiffré du système d'exploitation de votre appareil (Keychain sur iOS, Keystore sur Android).</p>
 
-  <h3>6. Vos droits (RGPD)</h3>
+  <h3>7. Vos droits (RGPD)</h3>
   <ul>
     <li>Accéder à vos données personnelles.</li>
     <li>Corriger des données inexactes.</li>
@@ -260,10 +265,10 @@
     <li>Vous opposer au traitement de vos données.</li>
   </ul>
 
-  <h3>7. Conservation des données</h3>
+  <h3>8. Conservation des données</h3>
   <p>Nous conservons vos données tant que votre compte est actif. Suppression dans les 30 jours suivant la clôture du compte.</p>
 
-  <h3>8. Mineurs</h3>
+  <h3>9. Mineurs</h3>
   <p>Blumm n'est pas destinée aux enfants de moins de 13 ans.</p>
 
   <div class="contact-box">
@@ -277,7 +282,7 @@
 <div id="lang-it" class="lang-section">
 <section>
   <h2>Informativa sulla Privacy</h2>
-  <p class="date">Ultimo aggiornamento: 10 settembre 2026</p>
+  <p class="date">Ultimo aggiornamento: 13 ottobre 2026</p>
 
   <p>Questa Informativa descrive come <strong>Blumm</strong> raccoglie, utilizza e protegge le tue informazioni personali.</p>
 
@@ -309,12 +314,22 @@
     <li><strong>Cloudflare:</strong> utilizziamo Cloudflare Turnstile per proteggere l'accesso e la registrazione dai bot. Elabora dati tecnici della richiesta (come l'indirizzo IP) esclusivamente per questa finalità di sicurezza.</li>
     <li><strong>Apple App Store / Google Play:</strong> l'elaborazione dei pagamenti dell'abbonamento è gestita da Apple o Google, a seconda della piattaforma. Non riceviamo né conserviamo i dati della tua carta — solo lo stato dell'abbonamento (attivo, scaduto, ecc.).</li>
     <li><strong>Expo / EAS:</strong> distribuzione aggiornamenti.</li>
+    <li><strong>Resend:</strong> invio di e-mail (conferma dell'account, link di accesso e avvisi del sito).</li>
   </ul>
+  <p>Nell'app non vendiamo le tue informazioni né le condividiamo con terzi a fini pubblicitari o commerciali. Sul sito web, i pixel pubblicitari di Meta e TikTok si attivano solo se li accetti (vedi la sezione «Sito web, analisi e cookie»).</p>
 
-  <h3>5. Sicurezza</h3>
+  <h3 id="web-it">5. Sito web, analisi e cookie</h3>
+  <p>Questa sezione si applica a chi visita <strong>blummapp.com</strong>, oltre a chi usa l'app.</p>
+  <p><strong>Moduli.</strong> Se ti iscrivi alla lista d'attesa o compili il modulo per le allenatrici, trattiamo il tuo nome, cognome, e-mail, come ci hai conosciuto, la tua lingua e, per la lista d'attesa, la tua piattaforma. Li usiamo per risponderti e gestire la tua richiesta. La base giuridica è il tuo consenso e l'esecuzione di misure su tua richiesta. Sono conservati su Supabase (UE) e riceviamo un avviso interno via e-mail, inviato con Resend. Li conserviamo finché sei interessata e per un massimo di 24 mesi dall'ultimo contatto. Puoi chiederne la cancellazione in qualsiasi momento.</p>
+  <p><strong>Analisi senza cookie.</strong> Per capire quali parti del sito funzionano usiamo PostHog (server nell'UE) e Plausible. Misurano le pagine viste, da dove arrivi (ad esempio un annuncio o un social), il paese approssimativo, il tipo di dispositivo, i clic sui pulsanti di download e gli invii dei moduli. Non usano cookie, non ti identificano, non leggono ciò che scrivi nei moduli e non conservano il tuo indirizzo IP. La base giuridica è il nostro legittimo interesse a migliorare il sito; puoi opporti scrivendoci.</p>
+  <p><strong>Pubblicità (Meta e TikTok).</strong> Solo se premi «Accetta» nel banner carichiamo i pixel di Meta (Meta Platforms Ireland) e TikTok (TikTok Technology Limited), che misurano i nostri annunci e permettono di mostrarteli di nuovo. Possono installare cookie (come _fbp e _ttp) e ricevere dati sulla tua visita, che possono trattare fuori dall'UE secondo le proprie politiche. Se rifiuti, non viene caricato nulla da loro. Il tuo consenso è volontario e puoi revocarlo in qualsiasi momento da <a href="#" data-consent-open>Preferenze cookie</a>, senza effetto su quanto avvenuto prima. Non inviamo a queste piattaforme ciò che scrivi nei moduli.</p>
+  <p><strong>Archiviazione locale.</strong> Salviamo nel tuo browser la tua scelta del banner e la tua lingua, perché il sito funzioni come ti aspetti. Non vengono usati per la pubblicità.</p>
+  <p>I tuoi diritti sono quelli descritti nella sezione «I tuoi diritti (GDPR)».</p>
+
+  <h3>6. Sicurezza</h3>
   <p>Utilizziamo la cifratura in transito (HTTPS/TLS) e a riposo per proteggere i tuoi dati. Il tuo account è protetto da una password e la sessione di autenticazione è conservata nell'archivio cifrato del sistema operativo del tuo dispositivo (Keychain su iOS, Keystore su Android).</p>
 
-  <h3>6. I tuoi diritti (GDPR)</h3>
+  <h3>7. I tuoi diritti (GDPR)</h3>
   <ul>
     <li>Accedere ai tuoi dati personali.</li>
     <li>Correggere dati inesatti.</li>
@@ -323,10 +338,10 @@
     <li>Opporti al trattamento dei tuoi dati.</li>
   </ul>
 
-  <h3>7. Conservazione dei dati</h3>
+  <h3>8. Conservazione dei dati</h3>
   <p>Conserviamo i tuoi dati finché il tuo account è attivo. Cancellazione entro 30 giorni dalla chiusura dell'account.</p>
 
-  <h3>8. Minori</h3>
+  <h3>9. Minori</h3>
   <p>Blumm non è destinata a bambini di età inferiore a 13 anni.</p>
 
   <div class="contact-box">
@@ -347,7 +362,7 @@
         <img src="blumm-logo-white.png" alt="Blumm" style="height:24px;width:auto;opacity:0.9;">
       </div>
       <p>© 2026 Blumm. Bienestar femenino sincronizado.</p>
-      <p class="small"><a href="privacy.html">Privacidad</a> · <a href="terms.html">Términos</a> · <a href="mentions-legales.html">Aviso legal</a></p>
+      <p class="small"><a href="privacy.html">Privacidad</a> · <a href="terms.html">Términos</a> · <a href="mentions-legales.html">Aviso legal</a> · <a href="#" data-consent-open>Preferencias de cookies</a></p>
       <p class="small">¿Necesitas ayuda? <a href="mailto:info@blummapp.com">info@blummapp.com</a></p>
     </div>
   </footer>
@@ -360,10 +375,17 @@
       const btn = document.getElementById('langbtn-' + lang);
       if (btn) btn.classList.add('active');
       localStorage.setItem('meirins_lang', lang);
+      if (window.blummRefreshConsent) window.blummRefreshConsent();
     }
     const saved = (localStorage.getItem('meirins_lang') || '').slice(0,2);
     if (saved && document.getElementById('lang-' + saved)) showLang(saved);
     else showLang('es');
+    // privacy.html#web (enlace del banner): ir a la sección «Sitio web» del idioma activo
+    if (location.hash === '#web') {
+      const active = document.querySelector('.lang-section.active');
+      const target = active && document.getElementById('web-' + active.id.replace('lang-', ''));
+      if (target) target.scrollIntoView();
+    }
   </script>
 </body>
 </html>

@@ -46,12 +46,7 @@
     .join-feature { font-size: 14px; color: #0A0A0A; display: flex; align-items: center; gap: 10px; }
     .join-dot { width: 8px; height: 8px; border-radius: 50%; background: #0A0A0A; flex-shrink: 0; }
   </style>
-  <!-- Privacy-friendly analytics by Plausible -->
-  <script async src="https://plausible.io/js/pa-zUWs-SoObHdIVt2peKVUE.js"></script>
-  <script>
-    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-    plausible.init()
-  </script>
+  <script src="analytics.js?v=1" defer></script>
 </head>
 <body style="background:#fff;">
 
@@ -89,6 +84,8 @@
     btn.addEventListener('click', function(e) {
       e.preventDefault();
       if (ref) localStorage.setItem('blumm_pending_ref', ref);
+      // Solo categorías: el ref es el id real de la usuaria y no se envía a analítica
+      if (window.blummTrack) window.blummTrack('store_click', { platform: 'ios', location: 'join', has_ref: !!ref });
 
       const timeout = setTimeout(() => {
         window.location.href = APP_STORE_URL;

@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=13">
-  <script src="analytics.js?v=1" defer data-ads></script>
+  <script src="analytics.js?v=2" defer></script>
   <!-- Privacy-friendly analytics by Plausible -->
   <script async src="https://plausible.io/js/pa-zUWs-SoObHdIVt2peKVUE.js"></script>
   <script>
@@ -426,8 +426,7 @@
         <a href="support.html" data-i18n="footer.help">Ayuda</a> ·
         <a href="privacy.html" data-i18n="footer.privacy">Privacidad</a> ·
         <a href="terms.html" data-i18n="footer.terms">Términos</a> ·
-        <a href="mentions-legales.html" data-i18n="footer.legal">Aviso legal</a> ·
-        <a href="#" data-consent-open data-i18n="footer.cookies">Preferencias de cookies</a>
+        <a href="mentions-legales.html" data-i18n="footer.legal">Aviso legal</a>
       </p>
       <p class="small"><span data-i18n="footer.contact">¿Necesitas ayuda?</span> <a href="mailto:info@blummapp.com">info@blummapp.com</a></p>
     </div>
@@ -456,12 +455,6 @@
       return null; // escritorio / plataforma desconocida: no sabemos qué tienda ofrecer, se hace scroll al hero
     }
 
-    // Píxeles de Meta/TikTok: solo existen si la usuaria aceptó el banner (ver analytics.js)
-    function trackLead() {
-      if (typeof fbq === 'function') fbq('track', 'Lead');
-      if (typeof ttq !== 'undefined') ttq.track('Lead');
-    }
-
     // Analítica propia sin cookies (PostHog, ver analytics.js). Nunca datos personales.
     function track(name, props) {
       if (window.blummTrack) window.blummTrack(name, props);
@@ -470,7 +463,6 @@
     // Botones de tienda del hero (Google Play / App Store)
     function goStore(platform, e, where) {
       if (e) e.preventDefault();
-      trackLead();
       track('store_click', { platform: platform, location: where || 'hero', lang: document.documentElement.lang });
       const url = downloadUrl(platform);
       if (isLive(platform)) window.open(url, '_blank', 'noopener');
@@ -550,7 +542,7 @@
         'legal.notice.title': 'Aviso legal', 'legal.notice.text': 'Editor del sitio y datos de contacto',
         'cta.download': 'Descarga Blumm', 'cta.loading': 'Cargando…',
         'footer.copy': '© 2026 Blumm. Bienestar femenino sincronizado.',
-        'footer.help': 'Ayuda', 'footer.privacy': 'Privacidad', 'footer.terms': 'Términos', 'footer.legal': 'Aviso legal', 'footer.cookies': 'Preferencias de cookies', 'footer.contact': '¿Necesitas ayuda?',
+        'footer.help': 'Ayuda', 'footer.privacy': 'Privacidad', 'footer.terms': 'Términos', 'footer.legal': 'Aviso legal', 'footer.contact': '¿Necesitas ayuda?',
       },
       en: {
         'nav.app': 'App', 'nav.features': 'Features', 'nav.pricing': 'Pricing', 'nav.trainers': 'Trainers', 'nav.team': 'Team', 'nav.help': 'Help', 'nav.download': 'Download',
@@ -624,7 +616,7 @@
         'legal.notice.title': 'Legal notice', 'legal.notice.text': 'Site publisher and contact details',
         'cta.download': 'Download Blumm', 'cta.loading': 'Loading…',
         'footer.copy': '© 2026 Blumm. Femme wellness, synchronised.',
-        'footer.help': 'Help', 'footer.privacy': 'Privacy', 'footer.terms': 'Terms', 'footer.legal': 'Legal notice', 'footer.cookies': 'Cookie preferences', 'footer.contact': 'Need help?',
+        'footer.help': 'Help', 'footer.privacy': 'Privacy', 'footer.terms': 'Terms', 'footer.legal': 'Legal notice', 'footer.contact': 'Need help?',
       },
       fr: {
         'nav.app': "L'app", 'nav.features': 'Fonctionnalités', 'nav.pricing': 'Tarifs', 'nav.trainers': 'Coachs', 'nav.team': 'Équipe', 'nav.help': 'Aide', 'nav.download': 'Télécharger',
@@ -698,7 +690,7 @@
         'legal.notice.title': 'Mentions légales', 'legal.notice.text': "Éditeur du site et coordonnées",
         'cta.download': "Télécharge Blumm", 'cta.loading': 'Chargement…',
         'footer.copy': '© 2026 Blumm. Bien-être féminin synchronisé.',
-        'footer.help': 'Aide', 'footer.privacy': 'Confidentialité', 'footer.terms': 'Conditions', 'footer.legal': 'Mentions légales', 'footer.cookies': 'Préférences cookies', 'footer.contact': "Besoin d'aide ?",
+        'footer.help': 'Aide', 'footer.privacy': 'Confidentialité', 'footer.terms': 'Conditions', 'footer.legal': 'Mentions légales', 'footer.contact': "Besoin d'aide ?",
       }
     };
 
@@ -713,7 +705,6 @@
 
     function smartDownload(e, where) {
       if (e) e.preventDefault();
-      trackLead();
       const ua = navigator.userAgent || '';
       const platform = /iPhone|iPad|iPod/i.test(ua) ? 'ios' : /Android/i.test(ua) ? 'android' : null;
       track('store_click', { platform: platform || 'unknown', location: where || 'nav', lang: document.documentElement.lang });
@@ -750,7 +741,6 @@
         const btn = document.getElementById('btn-' + l);
         if (btn) btn.classList.toggle('active', l === lang);
       });
-      if (window.blummRefreshConsent) window.blummRefreshConsent(); // el banner cambia de idioma con la web
     }
 
     const saved = localStorage.getItem('meirins_lang');

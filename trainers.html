@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=13">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-  <script src="analytics.js?v=1" defer data-ads></script>
+  <script src="analytics.js?v=2" defer></script>
   <!-- Privacy-friendly analytics by Plausible -->
   <script async src="https://plausible.io/js/pa-zUWs-SoObHdIVt2peKVUE.js"></script>
   <script>
@@ -117,7 +117,6 @@
         <img src="blumm-logo-white.png" alt="Blumm" style="height:24px;width:auto;opacity:0.9;">
       </div>
       <p data-i18n="footer.copy">© 2026 Blumm. Bienestar femenino sincronizado.</p>
-      <p class="small"><a href="#" data-consent-open data-i18n="footer.cookies">Preferencias de cookies</a></p>
       <p class="small"><span data-i18n="footer.contact">¿Necesitas ayuda?</span> <a href="mailto:info@blummapp.com">info@blummapp.com</a></p>
     </div>
   </footer>
@@ -148,7 +147,6 @@
         'trainers.success.title': '¡Recibido!',
         'trainers.success.text': 'Gracias por tu interés. En breve nos pondremos en contacto contigo.',
         'footer.copy': '© 2026 Blumm. Bienestar femenino sincronizado.',
-        'footer.cookies': "Preferencias de cookies",
         'trainers.form.error.required': "Completa todos los campos e indica un email válido.",
         'footer.contact': '¿Necesitas ayuda?',
       },
@@ -170,7 +168,6 @@
         'trainers.success.title': 'Got it!',
         'trainers.success.text': "Thanks for your interest. We'll be in touch shortly.",
         'footer.copy': '© 2026 Blumm. Femme wellness, synchronised.',
-        'footer.cookies': "Cookie preferences",
         'trainers.form.error.required': "Fill in every field and enter a valid email.",
         'footer.contact': 'Need help?',
       },
@@ -192,7 +189,6 @@
         'trainers.success.title': "C'est noté !",
         'trainers.success.text': "Merci de ton intérêt. On te recontacte très vite.",
         'footer.copy': '© 2026 Blumm. Bien-être féminin synchronisé.',
-        'footer.cookies': "Préférences cookies",
         'trainers.form.error.required': "Remplis tous les champs et indique un email valide.",
         'footer.contact': "Besoin d'aide ?",
       }
@@ -210,7 +206,6 @@
         if (btn) btn.classList.toggle('active', l === lang);
       });
       currentLang = lang;
-      if (window.blummRefreshConsent) window.blummRefreshConsent();
     }
 
     let currentLang = 'es';

@@ -513,9 +513,9 @@ video.hero-visual-bg { object-fit: cover; }
   gap: 16px;
 }
 .bento-img {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 415 / 553;   /* proporción real de las capturas: se ven enteras, sin recorte */
   border-radius: var(--rd-xl);
-  background: var(--verde-200) center / cover no-repeat;
+  background: var(--neutro-50) center / cover no-repeat;
   width: 100%;
 }
 .bento-card h4 { font-family: var(--font-heading); font-size: 24px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; color: var(--neutro-950); }

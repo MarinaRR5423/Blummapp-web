@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Télécharge Blumm</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#C4EDB8; --card:#FAFAF8; --ink:#0A0A0A; --green:#49CF38; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; background: var(--bg); color: var(--ink); font-family: 'Bricolage Grotesque', system-ui, sans-serif; }
+    .card { width: 100%; max-width: 420px; background: var(--card); border-radius: 28px; padding: 36px 28px; text-align: center; }
+    .card img { height: 44px; margin-bottom: 22px; }
+    h1 { font-size: 30px; line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 12px; }
+    p { font-size: 17px; line-height: 1.4; margin-bottom: 22px; }
+    .btn { display: block; width: 100%; padding: 16px; margin-top: 12px; border-radius: 16px; background: var(--ink); color: #fff; font-weight: 700; font-size: 18px; text-decoration: none; }
+    .btn.green { background: var(--green); color: var(--ink); }
+    #soon { display: none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="blumm-logo.png" alt="Blumm">
+    <h1>Télécharge Blumm</h1>
+    <p id="msg">Ton cycle, ta nutrition et ton entraînement dans une seule appli.</p>
+    <a id="ios" class="btn" href="#">App Store (iPhone)</a>
+    <a id="android" class="btn green" href="#">Google Play (Android)</a>
+    <p id="soon" style="margin-top:16px">La version Android arrive très bientôt. Reviens dans quelques jours !</p>
+  </div>
+
+  <script>
+    // Mettre à true quand l'app est publiée sur Google Play.
+    const PLAY_LIVE = false;
+
+    const APP_STORE_BASE = 'https://apps.apple.com/app/apple-store/id6782055959?pt=129062256&mt=8';
+    const PLAY_BASE      = 'https://play.google.com/store/apps/details?id=com.marina13.meirins';
+
+    // Code de campagne par cabinet : /go?c=nom-du-cabinet
+    const params = new URLSearchParams(location.search);
+    const raw = (params.get('c') || 'direct').toLowerCase().replace(/[^a-z0-9_-]/g, '').slice(0, 30) || 'direct';
+
+    const iosUrl = APP_STORE_BASE + '&ct=' + encodeURIComponent('Fisio_' + raw);
+    const playUrl = PLAY_BASE + '&referrer=' + encodeURIComponent('utm_source=fisio&utm_medium=qr&utm_campaign=' + raw);
+
+    const ios = document.getElementById('ios');
+    const android = document.getElementById('android');
+    const soon = document.getElementById('soon');
+    ios.href = iosUrl;
+    android.href = PLAY_LIVE ? playUrl : '#';
+    if (!PLAY_LIVE) {
+      android.addEventListener('click', function (e) { e.preventDefault(); soon.style.display = 'block'; });
+    }
+
+    const ua = navigator.userAgent || '';
+    const isIOS = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    const isAndroid = /Android/i.test(ua);
+    const platform = isIOS ? 'ios' : isAndroid ? 'android' : 'desktop';
+
+    // Medición anónima con PostHog (UE): sin cookies, sin perfil de persona, sin datos personales.
+    const PH_KEY  = 'phc_zkpJJdPGeZyZCorxBfaqPggyc9maxov2tDXWg3yiKuwe';
+    const PH_HOST = 'https://eu.i.posthog.com';
+    function track(event, extra) {
+      const body = JSON.stringify({
+        api_key: PH_KEY,
+        event: event || 'qr_scan',
+        distinct_id: 'qr-' + Math.random().toString(36).slice(2) + Date.now().toString(36),
+        properties: Object.assign({ campaign: raw, platform: platform, source: 'fisio_qr', $process_person_profile: false }, extra || {}),
+      });
+      return fetch(PH_HOST + '/capture/', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: body, keepalive: true })
+        .catch(function () {});
+    }
+    // Espera como máximo 700 ms para no retrasar la redirección.
+    const sent = Promise.race([track('qr_scan'), new Promise(function (r) { setTimeout(r, 700); })]);
+
+    // Clics manuales en los botones (ordenador o Android sin redirección automática).
+    ios.addEventListener('click', function () { track('store_click', { store: 'app_store' }); });
+    android.addEventListener('click', function () { track('store_click', { store: 'google_play', live: PLAY_LIVE }); });
+
+    if (isIOS) {
+      sent.then(function () { location.replace(iosUrl); });
+    } else if (isAndroid) {
+      if (PLAY_LIVE) { sent.then(function () { location.replace(playUrl); }); }
+      else { soon.style.display = 'block'; }
+    }
+    // Ordenador: se muestran los dos botones.
+  </script>
+</body>
+</html>

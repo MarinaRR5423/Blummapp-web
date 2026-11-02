@@ -199,7 +199,7 @@
       </div>
       <div class="bento-grid">
         <div class="bento-card">
-          <div class="bento-img" style="background-image:url('assets/figma/bento-card-1.jpg')"></div>
+          <div class="bento-img" data-bg-i18n="assets/figma/bento-card-1" style="background-image:url('assets/figma/bento-card-1.jpg')"></div>
           <h4 data-i18n="func.card1.title">Compárate contigo misma, no con otras</h4>
           <p data-i18n="func.card1.text">Con Apple Salud y tu reloj, ves cuánto se aleja tu frecuencia cardíaca en cada fase de tu media general. Es tu tendencia, no un diagnóstico.</p>
         </div>
@@ -740,6 +740,11 @@
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.dataset.i18n;
         if (T[lang] && T[lang][key]) el.textContent = T[lang][key];
+      });
+      // Imágenes con texto incrustado: una versión por idioma (es sin sufijo)
+      document.querySelectorAll('[data-bg-i18n]').forEach(el => {
+        const suffix = lang === 'es' ? '' : '-' + lang;
+        el.style.backgroundImage = "url('" + el.dataset.bgI18n + suffix + ".jpg')";
       });
       ['es','en','fr'].forEach(l => {
         const btn = document.getElementById('btn-' + l);

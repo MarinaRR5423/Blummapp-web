@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.marina13.meirins",
+      "sha256_cert_fingerprints": [
+        "9B:1E:3F:51:D2:45:70:A3:ED:20:D1:DD:0A:4C:78:53:F7:15:CB:01:1F:13:B5:C1:8A:10:11:F7:FE:6C:77:DD"
+      ]
+    }
+  }
+]

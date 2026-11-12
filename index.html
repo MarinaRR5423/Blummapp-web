@@ -204,27 +204,27 @@
           <p data-i18n="func.card1.text">Con Apple Salud y tu reloj, ves cuánto se aleja tu frecuencia cardíaca en cada fase de tu media general. Es tu tendencia, no un diagnóstico.</p>
         </div>
         <div class="bento-card">
-          <div class="bento-img" style="background-image:url('assets/figma/bento-card-2.png')"></div>
+          <div class="bento-img" data-bg-i18n="assets/figma/bento-card-2" data-bg-ext="png" data-bg-langs="en,fr" style="background-image:url('assets/figma/bento-card-2.png')"></div>
           <h4 data-i18n="func.card2.title">Ajusta, cambia o guarda tus recetas según tus objetivos</h4>
           <p data-i18n="func.card2.text">Recetas flexibles que puedes adaptar a lo que tienes en la nevera y a tu tiempo disponible.</p>
         </div>
         <div class="bento-card">
-          <div class="bento-img" style="background-image:url('assets/figma/bento-card-3.png')"></div>
+          <div class="bento-img" data-bg-i18n="assets/figma/bento-card-3" data-bg-ext="png" data-bg-langs="en,fr" style="background-image:url('assets/figma/bento-card-3.png')"></div>
           <h4 data-i18n="func.card3.title">Ejercicios adaptados a tu condición y objetivos</h4>
           <p data-i18n="func.card3.text">Entrenos que respetan tu energía, tus lesiones y lo que quieres conseguir.</p>
         </div>
         <div class="bento-card">
-          <div class="bento-img" style="background-image:url('assets/figma/bento-card-4.png')"></div>
+          <div class="bento-img" data-bg-i18n="assets/figma/bento-card-4" data-bg-ext="png" data-bg-langs="en,fr" style="background-image:url('assets/figma/bento-card-4.png')"></div>
           <h4 data-i18n="func.card4.title">Guarda tu día a día para conocer mejor tus sensaciones</h4>
           <p data-i18n="func.card4.text">Flujo, dolor, energía y ánimo, registrados en segundos para detectar patrones.</p>
         </div>
         <div class="bento-card">
-          <div class="bento-img" style="background-image:url('assets/figma/bento-card-5.png')"></div>
+          <div class="bento-img" data-bg-i18n="assets/figma/bento-card-5" data-bg-ext="png" data-bg-langs="en,fr" style="background-image:url('assets/figma/bento-card-5.png')"></div>
           <h4 data-i18n="func.card5.title">Controla tu hidratación para estar siempre al 100%</h4>
           <p data-i18n="func.card5.text">Recordatorios y objetivos de agua ajustados a tu actividad diaria.</p>
         </div>
         <div class="bento-card">
-          <div class="bento-img" style="background-image:url('assets/figma/bento-card-6.png')"></div>
+          <div class="bento-img" data-bg-i18n="assets/figma/bento-card-6" data-bg-ext="png" data-bg-langs="en,fr" style="background-image:url('assets/figma/bento-card-6.png')"></div>
           <h4 data-i18n="func.card6.title">Elige tu tipo de dieta: gustos, alergias, intolerancias y tiempo</h4>
           <p data-i18n="func.card6.text">Configura tu perfil nutricional una vez y deja que el resto se adapte a ti.</p>
         </div>
@@ -743,8 +743,11 @@
       });
       // Imágenes con texto incrustado: una versión por idioma (es sin sufijo)
       document.querySelectorAll('[data-bg-i18n]').forEach(el => {
-        const suffix = lang === 'es' ? '' : '-' + lang;
-        el.style.backgroundImage = "url('" + el.dataset.bgI18n + suffix + ".jpg')";
+        // data-bg-langs: idiomas que tienen versión propia; el resto usa la base (español)
+        const langs = (el.dataset.bgLangs || 'es,en,fr').split(',');
+        const own = lang !== 'es' && langs.includes(lang);
+        const url = own ? el.dataset.bgI18n + '-' + lang + '.jpg' : el.dataset.bgI18n + '.' + (el.dataset.bgExt || 'jpg');
+        el.style.backgroundImage = "url('" + url + "')";
       });
       ['es','en','fr'].forEach(l => {
         const btn = document.getElementById('btn-' + l);

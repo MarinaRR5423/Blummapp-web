@@ -304,7 +304,7 @@
           <source src="assets/video/ovulacion.mp4" type="video/mp4">
         </video>
         <div class="trainer-frame">
-          <img src="assets/figma/entrenadora-frame.png" alt="" class="trainer-frame-img">
+          <img src="assets/figma/entrenadora-frame.png" data-src-i18n="assets/figma/entrenadora-frame" alt="" class="trainer-frame-img">
         </div>
       </div>
     </section>
@@ -748,6 +748,9 @@
         const own = lang !== 'es' && langs.includes(lang);
         const url = own ? el.dataset.bgI18n + '-' + lang + '.jpg' : el.dataset.bgI18n + '.' + (el.dataset.bgExt || 'jpg');
         el.style.backgroundImage = "url('" + url + "')";
+      });
+      document.querySelectorAll('[data-src-i18n]').forEach(el => {
+        el.src = el.dataset.srcI18n + (lang === 'es' ? '' : '-' + lang) + '.png';
       });
       ['es','en','fr'].forEach(l => {
         const btn = document.getElementById('btn-' + l);
